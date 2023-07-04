@@ -31,7 +31,7 @@ const Profile = () => {
   // const { data: user} = useSWR(id ? `api/users/${id}`: null)
 //  if (!user) return
 // session.user.
-console.log(session)
+console.log("session in profile: ", session)
 
 useEffect(() => {
   async function fetchBooks() {
@@ -56,6 +56,8 @@ useEffect(() => {
   }
 
 const booksPosted = userBooks.filter(book => book.userId === id)
+
+
   console.log(booksPosted)
   return (
 

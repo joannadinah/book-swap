@@ -11,7 +11,7 @@ const Container = styled.div`
 //   display: block;
 //   margin: 2em auto 5em auto;
 //   height: 15rem;
-padding: 5em 2em;
+padding: 8em 2em;
 `;
 
 const List = styled.ul`

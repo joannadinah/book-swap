@@ -65,7 +65,7 @@ useEffect(() => {
   }
 
 const booksPosted = userBooks.filter(book => book.userId === id)
-  console.log(booksPosted)
+  console.log("## ----> postedBook-ID: ", booksPosted.id)
   return (
 
     <ProfileCard>
