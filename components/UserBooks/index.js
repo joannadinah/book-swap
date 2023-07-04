@@ -1,14 +1,20 @@
 import Image from "next/image";
 import { styled } from "styled-components";
 
+
+const List = styled.ul`
+    list-style: none;
+`;
+
 const ListItem = styled.li`
     margin-bottom: 2em;
 `;
 
+
 export default function UserBooks({ books }) {
     return (
         <>
-        <ul>
+        <List>
             {books.map((book) => (
                 <ListItem key={book.id}>
                     
@@ -29,7 +35,7 @@ export default function UserBooks({ books }) {
                     
                 </ListItem>
             ))}
-        </ul>
+        </List>
         </>
     );
 }

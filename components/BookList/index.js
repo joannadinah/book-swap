@@ -1,6 +1,5 @@
 import useSWR from "swr";
 import { useRouter } from "next/router";
-import { StyledList } from "./BookList.styled";
 // import { books } from "../../lib/books"
 import Image from "next/image";
 import styled from "styled-components"
@@ -16,13 +15,35 @@ padding: 5em 2em;
 `;
 
 const List = styled.ul`
-    // display: block;
-    // margin: 2em auto 5em auto;
-    list-style: none;
-    `;
+list-style-type: none;
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+padding: 0;
+`;
+
+// const List = styled.ul`
+//     // display: block;
+//     // margin: 2em auto 5em auto;
+//     // list-style: none;
+//     `;
 
 const ListItem = styled.li`
-    margin-bottom: 2em;
+    
+    list-style-type: none;
+    
+`;
+const ItemCard = styled.div`
+    display: block;
+margin: 0 auto 2em auto;
+width: 60%;
+`;
+
+const StyledImage = styled.img`
+display: block;
+margin: 0 auto 0.5em auto;
+width: 60%;
 `;
 
 export default function BookList({books}) {
@@ -36,20 +57,21 @@ return (<Container>
 {books && books.map((book, index ) => {
     return (
         <ListItem key={index}> 
-        <div>
-        <Image
+        
+        <StyledImage
         src={book.image}
-        width={ 150 }
-        height= { 200 }
+        // width={ 150 }
+        // height= { 200 }
         alt="book-cover"
         />
+        <ItemCard>
         <details>
         <summary>{book.title}</summary>
             {/* <h2>{book.title}</h2> */}
             <h5>{book.author}</h5>
             <p>{book.description}</p>
             </details> 
-            </div>
+            </ItemCard>
         </ListItem>
     );
 })}

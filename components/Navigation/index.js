@@ -11,6 +11,7 @@ justify-content: space-around;
   position: absolute;
   top:0;
   width: 100vw;
+  list-style-type: none;
 `
 const StyledListItem= styled.li`
   list-style-type: none;
@@ -32,7 +33,7 @@ export default function Navigation() {
 
         <nav className="navbar navbar-expand-lg fixed-bottom" style={{backgroundColor: "#e3f2fd"}}>
         <div className="container-fluid">
-          <Link className="navbar-brand" href="#">Navbar</Link>
+          <Link className="navbar-brand" href="#">Menu</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

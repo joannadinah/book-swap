@@ -27,12 +27,12 @@ export default function Component({data}) {
   console.log("data in index", data)
   const { data: session } = useSession()
   return (
-    <Wrapper>
+    <>
     
     
       {!session && (<>Not signed in <br />
       <button onClick={() => signIn()} >Sign in</button></>)} 
       <BookList books={data}/>
-    </Wrapper>
+    </>
   )
 }

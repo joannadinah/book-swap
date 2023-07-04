@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { StyledList } from "../../../components/BookList/BookList.styled";
 import { StyledButton } from "../../../components/Button/Button.styled";
 import { books } from "../../../lib/books"
 
