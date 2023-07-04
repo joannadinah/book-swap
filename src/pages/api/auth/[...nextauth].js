@@ -4,6 +4,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import clientPromise from "../../../../lib/mongoose"
 import GoogleProvider from "next-auth/providers/google"
 import InstagramProvider from "next-auth/providers/instagram"; 
+
 //import Credentials, { CredentialsProvider } from "next-auth/providers/credentials"
 
 
@@ -23,18 +24,13 @@ export const authOptions = {
     })
   ],
   adapter: MongoDBAdapter(clientPromise),
+
+  callbacks: {
+    async session({ session, user }) {
+      session.user._id = user.id;
+      return session;
+    },
+  },
 }
 export default NextAuth(authOptions)
 
-
-// CredentialsProvider({
-//   name: "Sign in",
-//   credentials: {
-//     email: {
-//       label: "Email",
-//       type: "email",
-//       placeholder: "example@email.com",
-//     },
-//     password: { label: "Password", type: "password" },
-//   },
-// })

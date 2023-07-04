@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
+import "./User";
 
 const { Schema } = mongoose;
 
 const bookSchema = new Schema( {
-    name: String,
-    imageName: String,
+    title: String,
+    author: String,
+    image: String,
+    description: String,
+    borrowed: Boolean,
+    userId: String 
 
 });
 

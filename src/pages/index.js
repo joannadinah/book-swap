@@ -1,26 +1,38 @@
-import { useSession, signIn, signOut } from "next-auth/react"
-export default function Component() {
+// import { useSession, signIn, signOut } from "next-auth/react";
+import { Fragment, useEffect } from "react"
+import Link from "next/link";
+import BookList from "../../components/BookList"
+import useSWR from "swr";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { styled } from "styled-components";
 
+
+
+const Wrapper = styled.div`
+padding: 5em 0;
+`;
+
+const fetcher = (url) => fetch(url).then((r) => r.json());
+
+export default function Component({data}) {
+
+  // const { data: session } = useSession()
+  // const { data, error, isLoading } = useSWR(`/api/books`, fetcher);
+  
+  // if (error) return <div> Something went wrong.</div>;
+  // if (isLoading) return <div> Loading...</div>;
+
+
+  // console.log("books in index", books)
+  console.log("data in index", data)
   const { data: session } = useSession()
-
-  console.log(session)
-
-  if (session) {
-    return (
-      <>
-        <h3>
-         {/*  <img src={session.user.image} style={{width: '100px', borderRadius: '50%'}} /> */}
-          Signed in as {session.user.name}
-        </h3> 
-        <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
   return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
+    <Wrapper>
+    
+    
+      {!session && (<>Not signed in <br />
+      <button onClick={() => signIn()} >Sign in</button></>)} 
+      <BookList books={data}/>
+    </Wrapper>
   )
 }
