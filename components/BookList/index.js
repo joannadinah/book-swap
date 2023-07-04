@@ -18,16 +18,9 @@ const List = styled.ul`
 list-style-type: none;
 display: flex;
 flex-direction: column;
-
 justify-content: center;
 padding: 0;
 `;
-
-// const List = styled.ul`
-//     // display: block;
-//     // margin: 2em auto 5em auto;
-//     // list-style: none;
-//     `;
 
 const ListItem = styled.li`
     
@@ -51,32 +44,33 @@ export default function BookList({books}) {
 
 console.log('Books: ', books);
 return (<Container>
+
+
 <List>
-     {/* <li>hi</li> */}
+     
+     {books && books.map((book, index ) => {
+         return (
+             <ListItem key={index}> 
+             
+             <StyledImage
+             src={book.image}
+             // width={ 150 }
+             // height= { 200 }
+             alt="book-cover"
+             />
+             <ItemCard>
+             <details>
+             <summary>{book.title}</summary>
+                 <h5>{book.author}</h5>
+                 <p>{book.description}</p>
+                 </details> 
+                 </ItemCard>
+             </ListItem>
+         );
+     })}
+     
+     </List>
 
-{books && books.map((book, index ) => {
-    return (
-        <ListItem key={index}> 
-        
-        <StyledImage
-        src={book.image}
-        // width={ 150 }
-        // height= { 200 }
-        alt="book-cover"
-        />
-        <ItemCard>
-        <details>
-        <summary>{book.title}</summary>
-            {/* <h2>{book.title}</h2> */}
-            <h5>{book.author}</h5>
-            <p>{book.description}</p>
-            </details> 
-            </ItemCard>
-        </ListItem>
-    );
-})}
-
-</List>
 </Container>)
 }
 
