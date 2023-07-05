@@ -44,14 +44,14 @@ export default function Form({ onSubmit, id, formName, defaultData }) {
   console.log(id)
     return (
       <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
-        <Label htmlFor="name">Title</Label>
+        <Label htmlFor="title">Title</Label>
         <Input
           id="title"
           name="title"
           type="text"
           defaultValue={defaultData?.title}
         />
-        <Label htmlFor="name">Author</Label>
+        <Label htmlFor="author">Author</Label>
         <Input
           id="author"
           name="author"

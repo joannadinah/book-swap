@@ -18,23 +18,23 @@ width: 100vw;
 height:100vh;
 `;
 
-// const StyledProfileH3 = styled.h3`
+const StyledProfileH3 = styled.h3`
 // color: #784f41;
 // font-weight: bold;
-// `;
+`;
 
-// const StyledProfileH4 = styled.h4`
+const StyledProfileH4 = styled.h4`
 // color: #784f41;
-// `;
+`;
 
-// const StyledOffer = styled.p`
+const StyledOffer = styled.p`
 // color: #784f41;
-// `;
+`;
 
-// const HeadlineProfile = styled.h3`
-//   margin-top: 30em;
-//   color: #784f41
-// `;
+const HeadlineProfile = styled.h3`
+  // margin-top: 30em;
+  // color: #784f41
+`;
 
 const StyledButton = styled.button`
  
@@ -87,7 +87,7 @@ const booksPosted = userBooks.filter(book => book.userId === id)
   return (
 
     <ProfileCard>
-    <HeadlineProfile>Profile Page</HeadlineProfile> 
+    <HeadlineProfile>my profile</HeadlineProfile> 
     <StyledProfileH4> 
       Signed in as: {session.user.name}
     </StyledProfileH4> 

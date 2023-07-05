@@ -12,13 +12,13 @@ import styled from "styled-components"
 
 
 const ProfileCard = styled.div`
-padding: 2em 0.5em 2em 0.5em;
+padding: 0em 0.5em 2em 0.5em;
 `;
 
 const StyledProfileH3 = styled.h3`
 color: #784f41;
 font-weight: bold;
-font-size: 3rem;
+font-size: 2rem;
 `;
 
 const StyledProfileH4 = styled.h4`
@@ -106,7 +106,7 @@ const booksPosted = userBooks.filter(book => book.userId === id)
   return (
 
     <ProfileCard>
-     <StyledProfileH3>Profile Page</StyledProfileH3>
+     <StyledProfileH3>my profile</StyledProfileH3>
     <StyledProfileH4> 
       Signed in as: {session.user.name}
     </StyledProfileH4> 
