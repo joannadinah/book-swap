@@ -9,17 +9,61 @@ import useSWR from "swr";
 import { useState, useEffect } from 'react';
 import styled from "styled-components"
 
+
+
+const ProfileCard = styled.div`
+padding: 2em 0.5em 2em 0.5em;
+`;
+
+const StyledProfileH3 = styled.h3`
+color: #784f41;
+font-weight: bold;
+font-size: 3rem;
+`;
+
+const StyledProfileH4 = styled.h4`
+color: #784f41;
+margin-top: 2rem;
+`;
+
+const StyledOffer = styled.div`
+color: #784f41;
+margin-bottom: 1rem;
+margin-top: 1rem;
+`;
+
+
+
+const ButtonBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const StyledButton = styled.button`
  
   margin-bottom: 5em;
-  background: var(--color-water-10);
-  font-size: larger;
+  background: #ddc9b4;
+  color: white;
+  font-size: 0.5rem;
+
   padding: 0.5rem 1rem;
-  box-shadow: 0px 1px 5px -2px var(--color-granite);
+  box-shadow: 5px 5px 5px #784f41;
+  border-radius: 1rem;
   &:hover {
-    cursor: pointer;
+    background-color: #ee6055; 
   }
 `
+const StyledLink = styled(Link)`
+color: #784f41;
+font-size: 1.5rem;
+text-decoration: none;
+font-weight: bold;
+&:hover {
+  color: #2b9348; 
+}
+
+
+`;
 
 const Profile = () => {
 
@@ -50,7 +94,7 @@ useEffect(() => {
     return (
     <>
       Not signed in <br />
-      <button onClick={() => signIn()} >Sign in</button>
+      <StyledButton onClick={() => signIn()} >Sign in</StyledButton>
     </>
     )
   }
@@ -61,23 +105,26 @@ const booksPosted = userBooks.filter(book => book.userId === id)
   console.log(booksPosted)
   return (
 
-    <>
-     <h3>Profile Page</h3>
-    <h4> 
+    <ProfileCard>
+     <StyledProfileH3>Profile Page</StyledProfileH3>
+    <StyledProfileH4> 
       Signed in as: {session.user.name}
-    </h4> 
+    </StyledProfileH4> 
    
     <div>
-      <p>Books I offer:</p>
+      <StyledOffer>Books I offer:</StyledOffer>
 
       {userBooks.length > 0 && <UserBooks books={booksPosted} />}
 
 
-      <Link href="/create"> + book
-      </Link>
+      
     </div>
+    <ButtonBox>
+    <StyledLink href="/create"> + book
+      </StyledLink>
     <StyledButton onClick={() => signOut()}>Sign out</StyledButton> 
-    </>
+    </ButtonBox>
+    </ProfileCard>
   );
 };
 

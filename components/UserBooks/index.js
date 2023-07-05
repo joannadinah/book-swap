@@ -3,23 +3,28 @@ import { styled } from "styled-components";
 
 
 const List = styled.ul`
-    // list-style: none;
-    list-style-type: none;
-    display: grid;
-    // flex-direction: column;
-    // justify-content: center;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     padding: 0;
-
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto auto auto; 
-    // column-gap: 10px;
-    row-gap: 0.5em;
-    
+    margin: 0px auto;
+    width: auto;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+    align-self: center;
 `;
 
 const ListItem = styled.li`
     margin-bottom: 2em;
     list-style-type: none;
+    height: 100%;
+    width: 30%;
+    justify-self: left;
+    // margin: 0.5rem;
+
 `;
 
 // const ItemCard = styled.div`
@@ -29,7 +34,7 @@ const ListItem = styled.li`
 // `;
 
 const StyledImage = styled.img`
-display: block;
+// display: block;
 margin: 0 auto 0.5em auto;
 width: 60%;
 `;

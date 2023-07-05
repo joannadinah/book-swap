@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+
 
 const StyledParent= styled.ul`
 display: flex;
@@ -24,13 +26,19 @@ border: none;
 background-color: transparent;
 font-size:30px;
 `
+const NavWrapper = styled.div`
+ & .active {font-weight: bold ; text-decoration: italic}
+`;
+
 
 export default function Navigation() {
 
+  const router = useRouter();
+  const active = router.pathname;
   const { data: session } = useSession();
  
     return (
-
+        <NavWrapper>
         <nav className="navbar navbar-expand-lg fixed-bottom" style={{backgroundColor: "#ccd5ae"}}>
         <div className="container-fluid" >
           <Link style={{color: "#784f41"}} className="navbar-brand" href="#">Menu</Link>
@@ -40,18 +48,18 @@ export default function Navigation() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link style={{color: "#784f41"}} className="nav-link active" aria-current="page" href="/">Home</Link>
+                <Link style={{color: "#784f41"}} className={`nav-link ${active === "/" && "active"}`} aria-current="page" href="/">Home</Link>
               </li>
               {session && 
               <li className="nav-item">
-                <Link style={{color: "#784f41"}} className="nav-link active" aria-current="page" href={`/profile/`}>Profile</Link>
+                <Link style={{color: "#784f41"}} className={`nav-link ${active === "/profile" && "active"}`} aria-current="page" href={`/profile/`}>Profile</Link>
               </li>
               }
               <li className="nav-item">
-                <Link style={{color: "#784f41"}} className="nav-link active" aria-current="page" href="/friends">Friends</Link>
+                <Link style={{color: "#784f41"}} className={`nav-link ${active === "/friends" && "active"}`} aria-current="page" href="/friends">Friends</Link>
               </li>
               <li className="nav-item">
-                <Link style={{color: "#784f41"}} className="nav-link" href="/create">Add Book</Link>
+                <Link style={{color: "#784f41"}} className={`nav-link ${active === "/create" && "active"}`} href="/create">Add Book</Link>
               </li>
             </ul>
             {/* <form className="d-flex">
@@ -61,7 +69,7 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
-    
+      </NavWrapper>
     );
   }
 

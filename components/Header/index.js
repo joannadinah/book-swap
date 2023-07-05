@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Headline = styled.h1`
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
