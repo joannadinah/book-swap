@@ -13,6 +13,8 @@ const Headline = styled.h1`
   padding: 20px;
   text-align: center;
   z-index: 1;
+  text-shadow: 2px 4px rgb(248, 187, 187), 0 0 1em rgb(172, 172, 185),
+    0 0 0.2em rgb(192, 192, 200);
   
 `;
 

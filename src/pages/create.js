@@ -13,7 +13,9 @@ import { useSession } from "next-auth/react";
 const StyledH2 = styled.h2`
 color: #784f41;
 font-weight: bold;
-font-size: 3rem;
+font-size: 2rem;
+padding-left: 0.3em;
+font-style: roboto;
 `;
 
 export default function CreateBookPage() {
@@ -43,7 +45,7 @@ export default function CreateBookPage() {
 
   return (
     <>
-      <StyledH2 id="add-book">Add Book</StyledH2>
+      <StyledH2 id="add-book">add a book</StyledH2>
       <Link href="/profile/${id}">
         {/* <StyledBackLink>back</StyledBackLink> */}
       </Link>
