@@ -42,7 +42,7 @@ export default function CreateBookPage() {
       console.error(`Error: ${response.status}`);
     }
   }
-
+ if (session) {
   return (
     <>
       <StyledH2 id="add-book">add a book</StyledH2>
@@ -52,7 +52,7 @@ export default function CreateBookPage() {
       <Form onSubmit={addBook} id={session.user._id} formName={"add-book"} />
     </>
   );
-}
+}}
 
 
 // <h2 id="add-book">Add Book</h2>
