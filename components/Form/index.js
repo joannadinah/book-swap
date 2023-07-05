@@ -3,26 +3,28 @@ import { StyledButton } from "../Button/Button.styled";
 import { useRouter } from "next/router";
 
 const FormContainer = styled.form`
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  margin: 2rem 2rem 4rem 2rem;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
   padding: 0.5rem;
   font-size: inherit;
-  border: 3px solid black;
+  border: 3px solid #784f41;
   border-radius: 0.5rem;
 `;
 
 const Textarea = styled.textarea`
   font-family: inherit;
-  border: 3px solid black;
+  border: 3px solid #784f41;
   border-radius: 0.5rem;
   padding: 0.5rem;
 `;
 
 const Label = styled.label`
   font-weight: bold;
+  color: #784f41;
 `;
 
 
@@ -37,7 +39,7 @@ export default function Form({ onSubmit, id, formName, defaultData }) {
       onSubmit({...data, userId:id});
       console.log(data)
       event.target.reset();
-      push("/");
+      push("/profile");
     }
   console.log(id)
     return (

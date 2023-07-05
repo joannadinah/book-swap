@@ -11,12 +11,30 @@ import styled from "styled-components"
 
 
 const ProfileCard = styled.div`
-// padding-top: 10em;
+padding-top: 50px;
+display: flex;
+flex-direction: column;
+width: 100vw;
+height:100vh;
 `;
 
-const HeadlineProfile = styled.h3`
-  margin-top: 30em;
-`;
+// const StyledProfileH3 = styled.h3`
+// color: #784f41;
+// font-weight: bold;
+// `;
+
+// const StyledProfileH4 = styled.h4`
+// color: #784f41;
+// `;
+
+// const StyledOffer = styled.p`
+// color: #784f41;
+// `;
+
+// const HeadlineProfile = styled.h3`
+//   margin-top: 30em;
+//   color: #784f41
+// `;
 
 const StyledButton = styled.button`
  
@@ -69,13 +87,12 @@ const booksPosted = userBooks.filter(book => book.userId === id)
   return (
 
     <ProfileCard>
-    
-    <HeadlineProfile>Profile Page</HeadlineProfile>
-    <h4> 
+    <HeadlineProfile>Profile Page</HeadlineProfile> 
+    <StyledProfileH4> 
       Signed in as: {session.user.name}
-    </h4> 
+    </StyledProfileH4> 
     <div>
-      <p>Books I offer:</p>
+      <StyledOffer>Books I offer:</StyledOffer>
 
       {userBooks.length > 0 && <UserBooks books={booksPosted} />}
 

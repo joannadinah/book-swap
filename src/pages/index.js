@@ -9,7 +9,7 @@ import { styled } from "styled-components";
 
 
 const Wrapper = styled.div`
-padding: 5em 0;
+padding: 3em 0;
 `;
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
