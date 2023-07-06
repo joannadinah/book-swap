@@ -52,6 +52,45 @@ export default function UserBooks({ books }) {
                     <div className="card h-100">
                     <StyledImage src={book.image} className="card-img-top" alt="book-cover"/>
                     <div className="card-body">
+                    
+
+                    <button type="button" className="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" fontSize="0.3rem">
+                    Details
+                    </button>
+                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-scrollable">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="staticBackdropLabel">{book.title}</h5>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                <h6 className="modal-subtitle">{book.author}</h6>
+                                <p className="modal-text">{book.description}</p>
+                                </div>
+                                <div className="modal-footer">
+                                <button type="button" className="btn btn-outline-danger">Delete Book</button>
+                                <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Edit</button>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                </ListItem>
+            ))}
+        </List>
+        </>
+    );
+}
+
+{/* <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="col">
+                    <div className="card h-100">
+                    <StyledImage src={book.image} className="card-img-top" alt="book-cover"/>
+                    <div className="card-body">
                     <details>
                     <summary>{book.title}</summary>
                     <h5>{book.author}</h5>
@@ -60,12 +99,4 @@ export default function UserBooks({ books }) {
                     </div>
                     </div>
                     </div>
-                    </div>
-                    
-                </ListItem>
-            ))}
-        </List>
-        </>
-    );
-}
-
+                    </div> */}
