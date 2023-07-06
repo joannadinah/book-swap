@@ -7,7 +7,9 @@ import { useRouter } from "next/router";
 const StyledParent= styled.ul`
 display: flex;
 justify-content: space-around;
-  background-color: #A7D7C5;
+  // background-color: #A7D7C5;
+// background: linear-gradient(90deg, rgba(173,186,110,1) 0%, rgba(204,213,160,1) 52%, rgba(173,186,110,1) 100%);
+
   margin:0;
   padding: 30px;
   position: absolute;

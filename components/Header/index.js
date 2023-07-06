@@ -5,7 +5,10 @@ const Headline = styled.h1`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ccd5ae;
+  // background-color: #ccd5ae;
+  background: rgb(2,0,36);
+  background: rgb(173,186,110);
+// background: linear-gradient(90deg, rgba(173,186,110,1) 0%, rgba(204,213,160,1) 52%, rgba(173,186,110,1) 100%);
   color: #784f41;
   font-weight: 900;
   font-size: 3em;
